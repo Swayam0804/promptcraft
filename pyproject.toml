@@ -1,2 +1,2 @@
-[tool.vercel]
-entrypoint = "api.analyze:handler"
+   [tool.vercel]
+   entrypoint = "api.analyze:handler"
