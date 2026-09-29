@@ -15,7 +15,7 @@ form.addEventListener("submit", async (e) => {
   submitBtn.textContent = "Running the chain...";
 
   try {
-    const res = await fetch("/api/app", {
+    const res = await fetch("/api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ resume, jd }),
