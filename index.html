@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptCraft — Adaptive Resume Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>PromptCraft</h1>
+    <p class="tagline">An adaptive resume analyzer built on prompt chaining, not a single black-box prompt.</p>
+  </header>
+
+  <main>
+    <form id="analyzeForm">
+      <div class="field">
+        <label for="resume">Your resume text</label>
+        <textarea id="resume" placeholder="Paste your resume text here..." required></textarea>
+      </div>
+      <div class="field">
+        <label for="jd">Target job description</label>
+        <textarea id="jd" placeholder="Paste the job description here..." required></textarea>
+      </div>
+      <button type="submit" id="submitBtn">Run Analysis</button>
+    </form>
+
+    <section id="results" class="hidden">
+      <div class="stage">
+        <h2>Stage 1 · Extraction <span class="tag">few-shot prompting</span></h2>
+        <pre id="stage1"></pre>
+      </div>
+      <div class="stage">
+        <h2>Stage 2 · Gap Analysis <span class="tag">zero-shot prompting</span></h2>
+        <pre id="stage2"></pre>
+      </div>
+      <div class="stage">
+        <h2>Stage 3 · Rewrite <span class="tag">chain-of-thought + role prompting</span></h2>
+        <pre id="stage3"></pre>
+      </div>
+    </section>
+
+    <p id="errorMsg" class="error hidden"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
